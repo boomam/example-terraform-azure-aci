@@ -51,29 +51,28 @@ resource "azurerm_container_group" "my_container_group" {
     image       = var.container_image
     cpu         = var.container_cpu
     memory      = var.container_mem
-  }
 
 # Container - Networking Configuration
   # 80/tcp
-    ports = {
-      port        = var.container_port_http
-      protocol    = var.container_port_protocol_http
-    }
+  ports {
+    port        = var.container_port_http
+    protocol    = var.container_port_protocol_http
+  }
 
-    # 443/tcp
-    ports = {
-     port        = var.container_port_https
-     protocol    = var.container_port_protocol_https
-    }  
+  # 443/tcp
+  ports {
+   port        = var.container_port_https
+   protocol    = var.container_port_protocol_https
+  }  
   
 # Container - Volume Mount Points
-    volume = {
-      name                    = var.container_storage_name
-      mount_path              = var.container_storage_mount_path
-      read_only               = false
-      share_name              = var.storage_account_share_name
-      storage_account_name    = azurerm_storage_account.my_storage_account.name
-      storage_account_key     = azurerm_storage_account.my_storage_account.primary_access_key
+  volume {
+    name                    = var.container_storage_name
+    mount_path              = var.container_storage_mount_path
+    read_only               = false
+    share_name              = var.storage_account_share_name
+    storage_account_name    = azurerm_storage_account.my_storage_account.name
+    storage_account_key     = azurerm_storage_account.my_storage_account.primary_access_key
     }
   }
-  
+}
