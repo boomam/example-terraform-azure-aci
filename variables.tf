@@ -5,12 +5,12 @@ variable "resource_group_name" {
 
 variable "location" {
   default = "eastus"
-  description = "What location to place resources/groups into. For example, "eastus" or "centralus""
+  description = "What location to place resources/groups into. For example, 'eastus' or 'centralus'"
 }
 
 variable "environment" {
   default = "non-prod-testing"
-  description = "Environment name. For example, "non-prod" or "prod""
+  description = "Environment name. For example, 'non-prod' or 'prod'"
 }
 
 variable "tags" {
@@ -25,7 +25,7 @@ variable "container_group_name" {
 
 variable "ip_address_type" {
   default = "Public"
-  description = "Type of IP address to use. For example, "Public" or "Private""
+  description = "Type of IP address to use. For example, 'Public' or 'Private'"
 }
 
 variable "dns_name_label" {
@@ -35,7 +35,7 @@ variable "dns_name_label" {
 
 variable "os_type" {
   default = "Linux"
-  description = "The OS of the containers within the group. For example, "Linux" or "Windows""
+  description = "The OS of the containers within the group. For example, 'Linux' or 'Windows'"
 }
 
 # Storage Information
@@ -51,12 +51,12 @@ variable "storage_account_kind" {
 
 variable "storage_account_tier" {
   default = "Standard"
-  description = "Storage Account Tier. For example, "Standard" or "Premium""
+  description = "Storage Account Tier. For example, 'Standard' or 'Premium'"
 }
 
 variable "storage_account_replication" {
   default = "LRS"
-  description = "Replication type. For example, "LRS", "GRS", etc"
+  description = "Replication type. For example, 'LRS', 'GRS', etc"
 }
 
 variable "storage_account_share_name" {
@@ -76,7 +76,7 @@ variable "storage_account_key" {
 
 variable "storage_account_access_tier" {
   default = "Hot"
-  description = "Default access tier for storage account. Either "hot" or "cold""
+  description = "Default access tier for storage account. Either 'hot' or 'cold'"
 }
 
 variable "storage_account_tls_version" {
